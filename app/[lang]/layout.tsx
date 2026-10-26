@@ -18,7 +18,6 @@ import { getDict, type Lang, langs } from "@l10n/dict";
 import { getAssetPath } from "@lib/assets";
 import { websiteUrl } from "@lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import type { Organization, WebSite, WithContext } from "schema-dts";
 import JsonLd from "./_components/JsonLd";
@@ -26,8 +25,6 @@ import Footer from "./_layout/Footer";
 import Header from "./_layout/Header";
 
 import "@/global.css";
-
-const inter = Inter({ display: "swap", subsets: ["latin"] });
 
 export const generateStaticParams = () => langs.map((lang) => ({ lang }));
 
@@ -80,7 +77,7 @@ const RootLayout = async ({ params, children }: RootLayoutProps) => {
 
 	return (
 		<html
-			className={`scheme-light dark:scheme-dark bg-white dark:bg-gray-900 ${inter.className}`}
+			className="scheme-light dark:scheme-dark bg-white dark:bg-gray-900"
 			lang={lang}
 		>
 			<body className="flex min-h-screen flex-col">

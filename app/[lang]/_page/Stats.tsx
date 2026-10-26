@@ -53,18 +53,18 @@ const Stats = ({ dict, postCount, projectCount }: StatsProps) => {
 	];
 
 	return (
-		<article className="bg-white py-24 sm:py-32 dark:bg-gray-900">
+		<article className="border-gray-900/5 border-y bg-brand-surface py-20 sm:py-24 dark:border-white/10 dark:bg-gray-900">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:max-w-none">
 					<div className="text-center">
-						<h2 className="text-balance font-semibold text-4xl text-gray-900 tracking-tight sm:text-5xl dark:text-white">
+						<h2 className="text-balance font-semibold text-3xl text-gray-900 tracking-tight sm:text-4xl dark:text-white">
 							{dict.landing.stats?.heading}
 						</h2>
 					</div>
-					<dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+					<dl className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-gray-900/8 bg-gray-900/8 text-center shadow-sm sm:grid-cols-2 lg:grid-cols-4 dark:border-white/10 dark:bg-white/10">
 						{stats.map((stat) => (
 							<div
-								className="flex flex-col bg-gray-400/5 p-8 dark:bg-white/5"
+								className="flex flex-col bg-white p-8 dark:bg-gray-900"
 								key={stat.name}
 							>
 								<dt className="font-semibold text-gray-600 text-sm/6 dark:text-gray-300">

@@ -36,14 +36,11 @@
  * other projects without a separate license from Tailwind Labs Inc.
  */
 
-import { Inter } from "next/font/google";
 import Link from "next/link";
 
 import "@/global.css";
 import { getAssetPath } from "@lib/assets";
 import type { Metadata } from "next";
-
-const inter = Inter({ display: "swap", subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	icons: {
@@ -53,9 +50,7 @@ export const metadata: Metadata = {
 };
 
 const NotFound = () => (
-	<main
-		className={`fixed top-0 left-0 grid h-full w-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900 ${inter.className}`}
-	>
+	<main className="fixed top-0 left-0 grid h-full w-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
 		<div className="text-center">
 			<p className="font-semibold text-base text-brand-primary">404</p>
 			<h1 className="mt-4 text-balance font-semibold text-5xl text-gray-900 tracking-tight sm:text-7xl dark:text-white">

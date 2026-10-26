@@ -83,16 +83,16 @@ const Header = ({ dict }: HeaderProps) => {
 	);
 
 	return (
-		<header className="bg-white dark:bg-gray-900">
+		<header className="sticky top-0 z-50 border-gray-900/8 border-b bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-gray-950/85">
 			<nav
 				aria-label="Global"
-				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+				className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8"
 			>
 				<div className="flex flex-1">
-					<div className="hidden lg:flex lg:gap-x-12">
+					<div className="hidden items-center lg:flex lg:gap-x-8">
 						{navigation.map((item) => (
 							<Link
-								className="font-semibold text-gray-900 text-sm/6 dark:text-white"
+								className="relative font-semibold text-gray-600 text-sm/6 transition-colors hover:text-brand-primary dark:text-gray-300 dark:hover:text-white"
 								href={item.href}
 								key={item.name}
 							>
@@ -111,11 +111,14 @@ const Header = ({ dict }: HeaderProps) => {
 						</button>
 					</div>
 				</div>
-				<Link className="-m-1.5 p-1.5" href={`/${lang}`}>
+				<Link
+					className="group -m-1.5 flex items-center gap-3 p-1.5"
+					href={`/${lang}`}
+				>
 					<span className="sr-only">{dict.common.orgName}</span>
 					<Image
 						alt=""
-						className="h-12 w-auto"
+						className="h-10 w-auto transition-transform group-hover:scale-105"
 						height="48"
 						priority
 						quality="75"
@@ -123,10 +126,13 @@ const Header = ({ dict }: HeaderProps) => {
 						unoptimized
 						width="48"
 					/>{" "}
+					<span className="hidden font-semibold text-gray-900 text-sm tracking-tight sm:block dark:text-white">
+						{dict.common.orgName}
+					</span>
 				</Link>
 				<div className="flex flex-1 justify-end">
 					<Link
-						className="font-semibold text-gray-900 text-sm/6 dark:text-white"
+						className="rounded-full border border-gray-900/10 px-4 py-2 font-semibold text-gray-700 text-sm/6 transition-colors hover:border-brand-primary/30 hover:bg-brand-primary/5 hover:text-brand-primary dark:border-white/15 dark:text-gray-200 dark:hover:border-brand-primary/40 dark:hover:bg-brand-primary/10 dark:hover:text-white"
 						href={pathName.replace(
 							`/${lang}`,
 							`/${lang === "en" ? "hr" : "en"}`,
@@ -143,7 +149,7 @@ const Header = ({ dict }: HeaderProps) => {
 				open={mobileMenuOpen}
 			>
 				<div className="fixed inset-0 z-10" />
-				<DialogPanel className="fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 dark:bg-gray-900">
+				<DialogPanel className="fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 dark:bg-gray-950">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-1">
 							<button
@@ -174,6 +180,9 @@ const Header = ({ dict }: HeaderProps) => {
 								unoptimized
 								width="48"
 							/>{" "}
+							<span className="hidden font-semibold text-gray-900 text-sm tracking-tight sm:block dark:text-white">
+								{dict.common.orgName}
+							</span>
 						</Link>
 						<div className="flex flex-1 justify-end">
 							<Link

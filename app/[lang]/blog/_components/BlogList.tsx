@@ -81,13 +81,13 @@ export const BlogList = ({ dict, posts }: BlogListProps) => {
 			<div className="mt-16 space-y-20 lg:mt-20">
 				{paginatedPosts.map((post: BlogPost, index: number) => (
 					<article
-						className="relative isolate flex flex-col gap-8 lg:flex-row"
+						className="group relative isolate flex flex-col gap-8 rounded-3xl border border-gray-900/8 bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-primary/10 sm:p-5 lg:flex-row dark:border-white/10 dark:bg-gray-900"
 						key={post.slug}
 					>
 						<div className="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
 							<Image
 								alt=""
-								className="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover dark:bg-gray-800"
+								className="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover transition-transform duration-500 group-hover:scale-105 dark:bg-gray-800"
 								fetchPriority={index === 0 ? "high" : "auto"}
 								fill
 								priority={index === 0}
@@ -113,8 +113,8 @@ export const BlogList = ({ dict, posts }: BlogListProps) => {
 									})}
 								</time>
 							</div>
-							<div className="group relative max-w-xl">
-								<h3 className="mt-3 font-semibold text-gray-900 text-lg/6 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+							<div className="relative max-w-xl">
+								<h3 className="mt-3 font-semibold text-gray-900 text-lg/6 group-hover:text-brand-primary dark:text-white dark:group-hover:text-brand-primary-light">
 									<Link href={`/${lang}/blog/${post.slug}`}>
 										<span className="absolute inset-0" />
 										{post.meta.title}

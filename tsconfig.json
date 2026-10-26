@@ -2,7 +2,6 @@
 	"$schema": "https://www.schemastore.org/tsconfig.json",
 	"compilerOptions": {
 		"allowJs": false,
-		"baseUrl": ".",
 		"esModuleInterop": true,
 		"exactOptionalPropertyTypes": true,
 		"forceConsistentCasingInFileNames": true,
@@ -18,11 +17,11 @@
 		"noPropertyAccessFromIndexSignature": true,
 		"noUncheckedIndexedAccess": true,
 		"paths": {
-			"@/*": ["app/*"],
-			"@blog/*": ["blog/*"],
-			"@l10n/*": ["l10n/*"],
-			"@lib/*": ["lib/*"],
-			"@projects/*": ["projects/*"]
+			"@/*": ["./app/*"],
+			"@blog/*": ["./blog/*"],
+			"@l10n/*": ["./l10n/*"],
+			"@lib/*": ["./lib/*"],
+			"@projects/*": ["./projects/*"]
 		},
 		"plugins": [
 			{

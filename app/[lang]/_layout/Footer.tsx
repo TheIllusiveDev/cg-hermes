@@ -67,24 +67,34 @@ const Footer = ({ dict }: FooterProps) => {
 	];
 
 	return (
-		<footer className="bg-white dark:bg-gray-900">
-			<div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
-				<div className="flex justify-center gap-x-6 md:order-2">
-					{socials.map((item) => (
-						<Link
-							className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
-							href={item.href}
-							key={item.href}
-							rel="noopener"
-							target="_blank"
-						>
-							<span className="sr-only">{item.name}</span>
-							<item.icon aria-hidden="true" className="size-6" />
-						</Link>
-					))}
+		<footer className="border-gray-900/8 border-t bg-brand-surface dark:border-white/10 dark:bg-gray-950">
+			<div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+				<div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+					<div>
+						<p className="font-semibold text-gray-900 dark:text-white">
+							{dict.common.orgName}
+						</p>
+						<p className="mt-1 text-gray-600 text-sm dark:text-gray-400">
+							{dict.common.orgDesc}
+						</p>
+					</div>
+					<div className="flex justify-center gap-x-6 md:order-2">
+						{socials.map((item) => (
+							<Link
+								className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+								href={item.href}
+								key={item.href}
+								rel="noopener"
+								target="_blank"
+							>
+								<span className="sr-only">{item.name}</span>
+								<item.icon aria-hidden="true" className="size-6" />
+							</Link>
+						))}
+					</div>
 				</div>
 				<Link
-					className="mt-8 block text-center text-gray-600 text-sm/6 hover:text-gray-800 md:order-1 md:mt-0 dark:text-gray-400 dark:hover:text-white"
+					className="mt-10 block border-gray-900/8 border-t pt-6 text-gray-500 text-sm/6 hover:text-gray-800 dark:border-white/10 dark:text-gray-500 dark:hover:text-white"
 					href={noticeUrl}
 					rel="noopener"
 					target="_blank"

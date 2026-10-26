@@ -83,7 +83,7 @@ export const ProjectList = ({ projects, dict }: ProjectListProps) => {
 			<div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-gray-200 border-t pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 dark:border-gray-700">
 				{paginatedProjects.map((project) => (
 					<article
-						className="flex max-w-xl flex-col items-start justify-between"
+						className="group flex max-w-xl flex-col items-start justify-between rounded-3xl border border-gray-900/8 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/10 dark:border-white/10 dark:bg-gray-900"
 						key={project.slug}
 					>
 						<div className="flex items-center gap-x-4 text-xs">
@@ -111,7 +111,7 @@ export const ProjectList = ({ projects, dict }: ProjectListProps) => {
 							</span>
 						</div>
 						<div className="group relative grow">
-							<h3 className="mt-3 font-semibold text-gray-900 text-lg/6 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+							<h3 className="mt-3 font-semibold text-gray-900 text-lg/6 group-hover:text-brand-primary dark:text-white dark:group-hover:text-brand-primary-light">
 								<Link href={`/${lang}/projects/${project.slug}`}>
 									<span className="absolute inset-0" />
 									{project.meta.title}

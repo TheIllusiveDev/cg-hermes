@@ -55,7 +55,7 @@ const Faq = ({ dict }: FaqProps) => {
 	}[];
 
 	return (
-		<div className="bg-white dark:bg-gray-900">
+		<div className="bg-white dark:bg-gray-950">
 			<div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
 				<div className="mx-auto max-w-4xl">
 					<h2 className="font-semibold text-4xl text-gray-900 tracking-tight sm:text-5xl dark:text-white">
@@ -65,12 +65,12 @@ const Faq = ({ dict }: FaqProps) => {
 						{faqs.map((faq) => (
 							<Disclosure
 								as="div"
-								className="py-6 first:pt-0 last:pb-0"
+								className="py-7 first:pt-0 last:pb-0"
 								key={faq.question}
 							>
 								<dt>
 									<DisclosureButton className="group flex w-full cursor-pointer items-start justify-between text-left text-gray-900 dark:text-white">
-										<span className="font-semibold text-base/7">
+										<span className="pr-6 font-semibold text-base/7">
 											{faq.question}
 										</span>
 										<span className="ml-6 flex h-7 items-center">

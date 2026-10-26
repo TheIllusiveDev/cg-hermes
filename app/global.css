@@ -17,8 +17,41 @@
 @import "tailwindcss";
 
 @theme {
-	--color-brand-primary: #7b68ee;
-	--color-brand-primary-light: #9f8fff; /* 20% lighter */
+	--color-brand-primary: #6d5dfc;
+	--color-brand-primary-light: #9b91ff;
+	--color-brand-ink: #17152b;
+	--color-brand-surface: #f7f7fb;
 }
 
 @plugin "@tailwindcss/typography";
+
+:root {
+	font-synthesis: none;
+	color-scheme: light;
+	text-rendering: optimizeLegibility;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	color: var(--color-brand-ink);
+	background: #fff;
+}
+
+::selection {
+	color: var(--color-brand-ink);
+	background: color-mix(in srgb, var(--color-brand-primary) 24%, white);
+}
+
+:focus-visible {
+	outline: 3px solid color-mix(in srgb, var(--color-brand-primary) 65%, white);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
