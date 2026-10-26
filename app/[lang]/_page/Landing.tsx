@@ -56,29 +56,49 @@ const Landing = ({ dict, lang }: LandingProps) => {
 	preload(posterSrc, { as: "image", fetchPriority: "high" });
 
 	return (
-		<article className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
+		<article className="relative isolate overflow-hidden bg-white py-20 sm:py-28 dark:bg-gray-950">
+			<div
+				aria-hidden="true"
+				className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(ellipse_at_top_right,rgba(109,93,252,0.16),transparent_58%)]"
+			/>
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
-				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
+				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-16 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
 					<div className="lg:pt-4 lg:pr-4">
 						<div className="lg:max-w-lg">
-							<h1 className="mt-2 text-pretty font-semibold text-4xl text-gray-900 tracking-tight sm:text-5xl dark:text-white">
-								<span className="text-brand-primary">
+							<div className="inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 px-3 py-1 font-semibold text-brand-primary text-xs uppercase tracking-[0.18em]">
+								<span className="size-1.5 rounded-full bg-brand-primary" />
+								{dict.common.orgDesc}
+							</div>
+							<h1 className="mt-6 text-pretty font-semibold text-5xl text-gray-950 tracking-[-0.04em] sm:text-6xl dark:text-white">
+								<span className="bg-linear-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
 									{dict.common.cybersecurity}
 								</span>{" "}
 								{dict.common.tagline}
 							</h1>
-							<p className="mt-6 text-gray-700 text-lg/8 dark:text-gray-300">
+							<p className="mt-7 max-w-xl text-gray-600 text-lg/8 dark:text-gray-300">
 								{dict.landing.mission}
 							</p>
-							<div className="mt-8">
+							<div className="mt-9 flex flex-wrap items-center gap-4">
 								<Link
-									className="inline-flex rounded-md bg-brand-primary px-3.5 py-2.5 font-semibold text-sm text-white shadow-xs hover:bg-brand-primary-light focus-visible:outline-2 focus-visible:outline-brand-primary focus-visible:outline-offset-2"
+									className="inline-flex items-center rounded-full bg-brand-primary px-5 py-3 font-semibold text-sm text-white shadow-lg shadow-brand-primary/20 transition-all hover:-translate-y-0.5 hover:bg-brand-primary-light hover:shadow-brand-primary/30"
 									href={`/${lang}/blog`}
 								>
 									{dict.common.pages.blog}
+									<span aria-hidden="true" className="ml-2">
+										↗
+									</span>
+								</Link>
+								<Link
+									className="font-semibold text-gray-700 text-sm transition-colors hover:text-brand-primary dark:text-gray-200 dark:hover:text-brand-primary-light"
+									href={`/${lang}/collaborate`}
+								>
+									{dict.common.pages.collaborate}
+									<span aria-hidden="true" className="ml-2">
+										→
+									</span>
 								</Link>
 							</div>
-							<figure className="mt-16 border-gray-200 border-l pl-8 text-gray-700 dark:border-gray-700 dark:text-gray-300">
+							<figure className="mt-16 border-gray-200 border-l-2 pl-6 text-gray-600 dark:border-gray-700 dark:text-gray-300">
 								<blockquote className="text-base/7">
 									<p>“{dict.landing.foundingQuote}”</p>
 								</blockquote>
@@ -108,7 +128,7 @@ const Landing = ({ dict, lang }: LandingProps) => {
 					{/** biome-ignore lint/a11y/noInteractiveElementToNoninteractiveRole: <The video truly is non-interactive and serves no functional purpose> */}
 					<video
 						autoPlay
-						className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:ml-0 dark:ring-white/10"
+						className="w-3xl max-w-none rounded-3xl shadow-2xl shadow-brand-primary/10 ring-1 ring-gray-900/10 sm:w-228 md:-ml-4 lg:ml-0 dark:ring-white/10"
 						loop
 						muted
 						playsInline
